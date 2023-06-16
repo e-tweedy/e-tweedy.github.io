@@ -15219,7 +15219,8 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Part-III:-Building-the-BikeSaferPA-predictive-model">Part III: Building the BikeSaferPA predictive model<a class="anchor-link" href="#Part-III:-Building-the-BikeSaferPA-predictive-model">&#182;</a></h2><p>In this notebook I will construct BikeSaferPA, a model designed to predict whether or not a cyclist suffered serious injury or fatality.  I begin by importing necessary libraries.</p>
+<h2 id="Part-III:-Building-the-BikeSaferPA-predictive-model">Part III: Building the BikeSaferPA predictive model<a class="anchor-link" href="#Part-III:-Building-the-BikeSaferPA-predictive-model">&#182;</a></h2><p><a href="https://e-tweedy.github.io/3_BikeSaferPA_models.html">Click here to view this notebook as an HTML file.</a></p>
+<p>In this notebook I will construct BikeSaferPA, a model designed to predict whether or not a cyclist suffered serious injury or fatality.  I begin by importing necessary libraries.</p>
 
 </div>
 </div>
@@ -15297,10 +15298,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <li><a href="#eval">Evaluating models on the hold-out test set</a></li>
 <li><a href="#shap">Explaining BikeSaferPA's decisions via SHAP values</a><ul>
 <li><a href="#shap_plots">SHAP plots for BikeSaferPA</a></li>
-<li><a href="#shap_fi">Discussion of features importance from SHAP</a></li>
+<li><a href="#shap_fi">Discussion of feature importance from SHAP</a></li>
 </ul>
 </li>
-<li><a href="#summary">Summary of process and results</a></li>
+<li><a href="#summary">Summary of model design process and results</a></li>
 <li><a href="#model_reflections">Reflections on model performance</a></li>
 <li><a href="#shap_conclusions">Conclusions based on SHAP values</a></li>
 <li><a href="#recommendations">Policy recommendations based on BikeSaferPA</a></li>
@@ -18966,7 +18967,7 @@ class="
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><a id="summary"></a></p>
-<h3 id="Summary-of-process-and-results">Summary of process and results<a class="anchor-link" href="#Summary-of-process-and-results">&#182;</a></h3><p>I developed two final candidates for BikeSaferPA, a classifier model which predicts whether cyclist suffered serious injury or fatality: logistic regression and gradient boosted decision tree models.  Model selection relied on the ROC-AUC score, and then prediction thresholds were chosen by analyzing $F_{\beta}$ scores.</p>
+<h3 id="Summary-of-model-design-process-and-results">Summary of model design process and results<a class="anchor-link" href="#Summary-of-model-design-process-and-results">&#182;</a></h3><p>I developed two final candidates for BikeSaferPA, a classifier model which predicts whether cyclist suffered serious injury or fatality: logistic regression and gradient boosted decision tree models.  Model selection relied on the ROC-AUC score, and then prediction thresholds were chosen by analyzing $F_{\beta}$ scores.</p>
 <h5 id="Feature-selection">Feature selection<a class="anchor-link" href="#Feature-selection">&#182;</a></h5><p>I first selected features by based on their log-odds coefficient values in a fitted LogisticRegression model (with purely L1 regularization, to promote sparsity of the coefficients).  Specifically, I omitted some features which had zero or very small coefficients, suggesting they're not very important to the model's expressability.  It's crucial here that I applied standard scaling to the numerical features ahead of time - if features are at vastly different scales, then their log-odds coefficients can provide misleading information.
 This reduced set of features was used to construct both logistric regression and gradient boosted tree models.</p>
 <h5 id="Feature-encoding">Feature encoding<a class="anchor-link" href="#Feature-encoding">&#182;</a></h5><p>I encoded features in several ways:</p>
