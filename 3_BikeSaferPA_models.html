@@ -15219,8 +15219,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Part-III:-Building-the-BikeSaferPA-predictive-model">Part III: Building the BikeSaferPA predictive model<a class="anchor-link" href="#Part-III:-Building-the-BikeSaferPA-predictive-model">&#182;</a></h2><p><a href="https://e-tweedy.github.io/3_BikeSaferPA_models.html">Click here to view this notebook as an HTML file.</a></p>
-<p>In this notebook I will construct BikeSaferPA, a model designed to predict whether or not a cyclist suffered serious injury or fatality.  I begin by importing necessary libraries.</p>
+<h2 id="Part-III:-Building-the-BikeSaferPA-predictive-model">Part III: Building the BikeSaferPA predictive model<a class="anchor-link" href="#Part-III:-Building-the-BikeSaferPA-predictive-model">&#182;</a></h2><p>In this notebook I will construct BikeSaferPA, a model designed to predict whether or not a cyclist suffered serious injury or fatality.  I begin by importing necessary libraries.</p>
 
 </div>
 </div>
@@ -18672,9 +18671,9 @@ neither seriously injured nor killed       0.97      0.56      0.71      4988
 <p><a id="shap_plots"></a></p>
 <h4 id="SHAP-plots">SHAP plots<a class="anchor-link" href="#SHAP-plots">&#182;</a></h4><p>Some remarks about the plots below:</p>
 <ul>
-<li>The right hand plot is a 'violin' plot which shows the accumulations of SHAP values of all samples, for each feature, color-coded by the value of that feature.</li>
+<li>The right hand plot is a 'violin' plot which shows the accumulations of SHAP values of all samples, for each feature, color-coded by the value of that feature.  The vertical width at a particular SHAP value reflects the number of samples at or around that value.</li>
 <li>The left hand plot is a bar plot which show the mean absolute SHAP value (the mean of the absolute values of the SHAP values, where the mean is taken over all samples in the test set) for each feature.  I have clipped off features that have particularly low mean absolute SHAP values.</li>
-<li>When reading the beeswarm plot, one should pay attention to the apparent relationship between feature value (i.e. color) and SHAP value - is the SHAP value increasing as or decreasing as the color becomes more red, and how fast?</li>
+<li>When reading the violin plot, one should pay attention to the apparent relationship between feature value (i.e. color) and SHAP value - is the SHAP value increasing or decreasing as the color becomes more red, and how fast?</li>
 <li>One should be cautious when using the bar plots.  A feature which is very important for few samples and not very important for the rest will have a small mean absolute SHAP value.</li>
 </ul>
 
@@ -19134,22 +19133,6 @@ This reduced set of features was used to construct both logistric regression and
 </div>
 </div>
 </div>
-</div><div id="cell-id=c60fd5d8-3bfc-403d-be50-a303389762c8" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
 </div>
 </body>
 
