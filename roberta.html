@@ -15197,6 +15197,8 @@ You should probably TRAIN this model on a down-stream task to be able to use it 
     <span class="n">accelerator</span><span class="o">.</span><span class="n">wait_for_everyone</span><span class="p">()</span>
     <span class="n">unwrapped_model</span> <span class="o">=</span> <span class="n">accelerator</span><span class="o">.</span><span class="n">unwrap_model</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
     <span class="n">unwrapped_model</span><span class="o">.</span><span class="n">save_pretrained</span><span class="p">(</span><span class="n">output_dir</span><span class="p">,</span><span class="n">save_function</span><span class="o">=</span><span class="n">accelerator</span><span class="o">.</span><span class="n">save</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">accelerator</span><span class="o">.</span><span class="n">is_main_process</span><span class="p">:</span>
+        <span class="n">tokenizer</span><span class="o">.</span><span class="n">save_pretrained</span><span class="p">(</span><span class="n">output_dir</span><span class="p">)</span>
 </pre></div>
 
      </div>
